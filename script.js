@@ -122,7 +122,6 @@ function renderHourly(data) {
   for (let index = start; index < Math.min(start + 6, data.hourly.time.length); index += 1) {
     const item = document.createElement('div');
     item.className = 'hour-item';
-    const hour = data.hourly.time[index].slice(11, 13);
     const [hourText] = data.hourly.time[index].slice(11, 16).split(':');
     const hour = Number(hourText);
     const label = index === start ? 'Now' : `${hour % 12 || 12}${hour >= 12 ? 'p' : 'a'}`;
